@@ -27,3 +27,10 @@ const App = () => {
 export default App;
 
 
+//useState는 기본적으로 array를 제공한다.const [minutes, setMinutes]
+//htmlFor를 사용하는 이유는 리액트는 jsx문번을 사용하기 때문에 몇가지가 더있다.
+//onChange == input에 변화가 생기면 리스닝해준다.
+//const onChange = (event) => {
+//  setMinutes(event.target.value);
+//};
+//이벤트 발생시 해당 타겟의 값을 가져온다.
