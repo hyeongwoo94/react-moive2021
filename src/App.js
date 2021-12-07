@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <span>시발</span>
+        
       </header>
     </div>
   );
