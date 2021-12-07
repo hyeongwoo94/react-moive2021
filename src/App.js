@@ -29,3 +29,4 @@ export default App;
 
 //select를 useState해서 value값에 맞쳐서 해당 부품만 나타나게 했다.
 //event를 유념해서 보기
+//{}안에는 자바스크립트 처럼 if문을 사용할 수가 있다.
