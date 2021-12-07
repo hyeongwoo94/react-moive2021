@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MtoH from "./component/MtoH";
+import KtoM from "./component/KtoM";
 const App = () => {
   const [index,setIndex] = useState("0");
   const choice = (event) => {
@@ -18,7 +19,7 @@ const App = () => {
       <hr />
       {index === "0" ? "두개중 하나를 고르시오" : null}
       {index === "1" ? <MtoH /> : null}
-      {index === "2" ? <MtoH /> : null}
+      {index === "2" ? <KtoM /> : null}
     </div>
     </>
   )
