@@ -1,26 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
-      </header>
+import { useState } from "react";
+const App = () => {
+  const [couter, setCounter] = useState(0);
+  const Click = () => {
+    setCounter(couter + 1);
+  }
+  return(
+    <div>
+      <h3> 클릭 횟수 : {couter}</h3>
+      <button onClick={Click}>클릭!</button>
     </div>
-  );
+  )
 }
 
 export default App;
