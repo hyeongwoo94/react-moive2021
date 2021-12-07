@@ -1,21 +1,30 @@
-import { reset } from "ansi-colors";
 import { useState } from "react";
+import MtoH from "./component/MtoH";
 const App = () => {
+  const [index,setIndex] = useState("0");
+  const choice = (event) => {
+    setIndex(event.target.value);
+  }
+//event는 html자체에 있는 이벤트이다.
   return(
     <>
-    ...
+    <h1 style={{textAlign:"center"}}>단위 변환기</h1>
+    <div style={{textAlign:"center"}}>
+      <select value={index} onChange={choice}>
+        <option value="0">고르시오</option>
+        <option value="1">분/시간</option>
+        <option value="2">킬로미터/마일로</option>
+      </select>
+      <hr />
+      {index === "0" ? "두개중 하나를 고르시오" : null}
+      {index === "1" ? <MtoH /> : null}
+      {index === "2" ? <MtoH /> : null}
+    </div>
     </>
   )
 }
 
 export default App;
 
-//setFlipped((current)=> !current)
-//이 함수 실행시 false가 true가 된다. !이란 반대를 말하는 것.
-//hours에도 onChang를 넣어준다.
-//value={flipped ? minutes : Math.round(minutes / 60)}
-//flipped가 참이라면 minutes 값이오고 flase라면 Math.round(minutes / 60)값이온다.
-//value={flipped ? Math.round(minutes * 60) : minutes }
-//분과 시간은 반대이기 때문에 반대로 적어줬다.
-//disabled의값이 분과 시간이 반대라는 것을 유념해야한다. disabled={flipped === false}
-//시간은 flase인게 참이고 분은 true인게 참이다.
+//select를 useState해서 value값에 맞쳐서 해당 부품만 나타나게 했다.
+//event를 유념해서 보기
