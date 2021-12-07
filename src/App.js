@@ -7,7 +7,8 @@ const App = () => {
     setIndex(event.target.value);
   }
 //event는 html자체에 있는 이벤트이다.
-  return(
+//console.log(event)를 넣고 콘솔로 들어가서 target에서 value값을 찾앗다. 결국 이벤트 발생시 타겟은 value이고 그것의 값을 바꿔준다는 뜻이다.
+return(
     <>
     <h1 style={{textAlign:"center"}}>단위 변환기</h1>
     <div style={{textAlign:"center"}}>
