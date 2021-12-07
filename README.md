@@ -3,7 +3,8 @@ const App = () => {
   const [couter, setCounter] = useState(0);
   const Click = () => {
     setCounter(couter + 1);
-  }
+    ===setCounter((current) => current + 1); 위와 동일한 함수 하지만 좀더 안전하다. 현재 state를 가지고 새로운 값을 계산한다.
+  };
   return(
     <div>
       <h3> 클릭 횟수 : {couter}</h3>
