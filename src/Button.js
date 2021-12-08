@@ -18,4 +18,5 @@ Button.propTypes = {
 //Button.propTypes = {
 //  text: PropTypes.string.isRequired,
 //}; 대소문자 구별하기
+
 export default Button;
