@@ -46,6 +46,8 @@ export default App;
 // {toDos.map((todo,index)=>(
 //   <li key={index}>{todo}</li>
 // ))}
+// *****여기서 todo는 내가 가져온 객체의 이름을 지정해주는거다. 만약 API를 가져왓다면 API에 있는 객체의 이름을 지정해주고
+// 객체이름.name, 객체이름.id 등등 해당 객체의 정보를 사용할 수 있다.
 //toDos의 array를 가져와서 li와 key를 추가한 새로운 array를 만들어서 브라우저에 나타낸다.
 //ㅣlist를 render 할때는 Key라는 props가 꼭필요하다. 
 //여기서 jsx문법으로 index의 타입은 number를 의미하기 때문에  index를 넣어준거다.
