@@ -1,36 +1,51 @@
-import { useEffect, useState } from "react";
-const Hellow = ()=> {
-  return(
-    <h2>hellow</h2>
-  )
-}
+import { useState } from "react";
+
 const App = () => {
-  const [counter, setCounter] = useState(0);
-  const onClick = () => {setCounter((current) => current + 1)};
-  const [keyword, setKeyword] = useState("");
-  const onChange = (event) => {setKeyword(event.target.value)};
-  useEffect(() => {},[keyword]);
-  useEffect(() => {},[counter]);
-  const [show,setShow] = useState(false);
-  const onShowing = () => {setShow((current) => !current)}
+  const [toDo, setToDo]= useState("");
+  const [toDos, setToDos] =useState([]);
+  const inputChange = (event) => setToDo(event.target.value);
+  const btnSubmit = (event) => {
+    event.preventDefault();
+    if(toDo === ""){
+      return;
+    }
+    setToDos((currentArray) => [toDo, ...currentArray]);
+    setToDo("");
+  };
+  console.log(toDos);
+//toDo가 비어있다면 return시키고 함수가 작동하지 않는다.
+//직접적으로 state를 수정할 수 없다.   setToDo(""); 빈값도 추가가된다.
+//setToDos((currentArray) => [toDo, ...currentArray]); 최근의 arrayfmf 가져오고 거기에 todo를 추가한다.
+//...이중요하다. 이것을 안해주면 [todo,[currentArray]]로 저장된다. 
 return(
   <>
-  <input value={keyword}
-  onChange={onChange}
-  placeholder="키워드 입력"
-  />
-  <p>{counter}</p>
-  <button onClick={onClick}>클릭</button>
-  {show ? <Hellow /> : null}
-  <button onClick={onShowing}>{show ? "Hide": "Show"}</button>
+  <h2>할 일 ({toDos.length})</h2>
+    <form onSubmit={btnSubmit}>
+      <input 
+      type="text"
+      value={toDo}
+      onChange={inputChange}
+      placeholder="키워드 입력"
+      />
+      <button
+      style={{marginLeft:"5px"}}
+      >추가하기</button>
+      <hr />
+      <ul>
+        {toDos.map((todo,index)=>(
+          <li key={index}>{todo}</li>
+        ))}
+      </ul>
+    </form>
   </>
 )
 }
 
 export default App;
 
-// useEffect (() => {
-//   console.log("hi");
-//   return() => console.log ("bye");
-// },[])
-//리렌더링 될때 hi가 나오고 렌더링이 사라질때 bye가 나타난다.
+// {toDos.map((todo,index)=>(
+//   <li key={index}>{todo}</li>
+// ))}
+//toDos의 array를 가져와서 li와 key를 추가한 새로운 array를 만들어서 브라우저에 나타낸다.
+//ㅣlist를 render 할때는 Key라는 props가 꼭필요하다. 
+//여기서 jsx문법으로 index의 타입은 number를 의미하기 때문에  index를 넣어준거다.
