@@ -39,3 +39,5 @@ const Detail = () => {
 }
 
 export default Detail;
+
+//무조건 map을 사용하는건 아닌다.
