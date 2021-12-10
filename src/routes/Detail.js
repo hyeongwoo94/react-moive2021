@@ -24,7 +24,7 @@ const Detail = () => {
       (
         <div>
           {movie.map((info) => (
-            <div key={info.id}>{info.title}</div>
+            <p key={info.id}>{info.title}</p>
           ))}
         </div>
       )
