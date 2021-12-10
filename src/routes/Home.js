@@ -29,7 +29,7 @@ const Home = () => {
           title={movie.title_long}
           mainImg={movie.medium_cover_image}
           id= {movie.id}
-          generes= {movie.generes}
+          genres= {movie.genres}
           summary={movie.summary}
           /> 
         ))}
