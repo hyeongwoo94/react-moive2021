@@ -12,7 +12,7 @@ const Movie = ({id, mainImg, title, genres, summary}) => {
             <li key={g} style={{fontWeight:"bold", color:"#ccc"}}>{g}</li>
           ))}
         </ul>
-        <p>{summary}</p>
+        <p>{summary.length > 235 ? `${summary.slice(0,235)}...`: summary}</p>
       </div>
     </li>       
   )

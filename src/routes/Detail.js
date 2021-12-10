@@ -1,24 +1,35 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useCallback, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
-  const{id} = useParams();
-  const [list, setList] =useState([]);
-  const getMovie = async () => {
+  
+  const [loading, setLoading] = useState(true);
+  const {id} = useParams();
+  const [movie, setMovie] =useState([]);
+  const getMovie = useCallback(async() => {
     const json = await (
-      await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
-    ).json();
-    setList(json.data.list);
+    await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
+    ).json()
+    setMovie(json.data.movie)
+    setLoading(false)
     console.log(json);
-  };
-  useEffect(() => {
-    getMovie();
-  }, []);
+    }, [id]);
+    useEffect(() => {
+    getMovie()
+    }, [getMovie]);
   return(
     <>
-    <h1>디테일 페이지</h1>
-    
-   
+      <h1>영화 상세페이지</h1>
+      {loading ? <h2 style={{textAlign:"center", fontSize:"3rem"}}>"기다려봐 팍 씨"</h2> : 
+      (
+        <div>
+          {movie.map((info) => (
+            <div key={info.id}>{info.title}</div>
+          ))}
+        </div>
+      )
+      } 
+      
     </>
   )
 }
