@@ -2,18 +2,20 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 const Movie = ({id, mainImg, title, genres, summary}) => {
   return (
-    <li key={id} >
-      <img src={mainImg} alt={title}
+    <li className="bg-white rounded-md shadow-2xl hover:bg-green-100" key={id} >
+      <Link to ={`/movie/${id}`}>
+      <img className="mx-auto rounded-lg mt-4" src={mainImg} alt={title}
       />
       <div >
-        <h3 ><Link to ={`/movie/${id}`}>{title}</Link></h3>
-        <ul>
+        <h3 className="text-2xl mt-4 hover:bg-sky-700">{title.length > 20 ? `${title.slice(0,20)}...`: title}</h3>
+        <ul className="flex justify-around">
           { genres.map((g) => (
-            <li key={g}>{g}</li>
+            <li className="mt-2 text-blue-300" key={g}>{g}</li>
           ))}
         </ul>
-        <p>{summary.length > 235 ? `${summary.slice(0,235)}...`: summary}</p>
+        <p className="mt-4 pb-4 px-2">{summary.length > 50 ? `${summary.slice(0,50)}...`: summary}</p>
       </div>
+      </Link>
     </li>       
   )
 }
