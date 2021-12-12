@@ -19,15 +19,15 @@ const Detail = () => {
     }, [getMovie]);
   return(
     <>
-      <h1 style={{textAlign:"center"}}>영화 상세페이지</h1>
-      {loading ? <h2 style={{textAlign:"center", fontSize:"3rem"}}>"기다려봐 팍 씨"</h2> : 
-      <div style={{textAlign:"center"}}>
+      <h1>영화 상세페이지</h1>
+      {loading ? <h2>"기다려봐 팍 씨"</h2> : 
+      <div>
         <h2>{movie.title}</h2>
-        <ul style={{listStyle:"none", padding:"0"}}>
+        <ul>
           <li>
             <img src={movie.large_cover_image} alt="큰 포스터"/>
           </li>
-          <li style={{marginTop:"15px", fontSize:"1.5rem", width:"50%", margin:"20px auto"}}>
+          <li>
             {movie.description_intro}
           </li>
         </ul>

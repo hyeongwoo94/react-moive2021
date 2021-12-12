@@ -19,10 +19,10 @@ const Home = () => {
 
   return(
     <>
-      <h1 style={{textAlign:"center", fontSize:"3rem", marginBottom:"2rem"}}>추천 영화</h1>
-      {loading ? <h2 style={{textAlign:"center", fontSize:"3rem"}}>"기다려봐 팍 씨"</h2> : 
+      <h1 className="text-center">추천 영화</h1>
+      {loading ? <h2>"기다려봐 팍 씨"</h2> : 
       <div>
-        <ul style={{listStyle:"none",padding:"0", display:"flex", flexWrap:"wrap", textAlign:"center",justifyContent:"space-between"}}>
+        <ul>
         {movies.map((movie) => (
           <Movie
           key={movie.id} 
