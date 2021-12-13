@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-moive2021/static/css/main.c89b833e.chunk.css",
-    "main.js": "/react-moive2021/static/js/main.d2773376.chunk.js",
-    "main.js.map": "/react-moive2021/static/js/main.d2773376.chunk.js.map",
+    "main.js": "/react-moive2021/static/js/main.e7533c97.chunk.js",
+    "main.js.map": "/react-moive2021/static/js/main.e7533c97.chunk.js.map",
     "runtime-main.js": "/react-moive2021/static/js/runtime-main.884e1a0c.js",
     "runtime-main.js.map": "/react-moive2021/static/js/runtime-main.884e1a0c.js.map",
     "static/js/2.90f98680.chunk.js": "/react-moive2021/static/js/2.90f98680.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.884e1a0c.js",
     "static/js/2.90f98680.chunk.js",
     "static/css/main.c89b833e.chunk.css",
-    "static/js/main.d2773376.chunk.js"
+    "static/js/main.e7533c97.chunk.js"
   ]
 }
