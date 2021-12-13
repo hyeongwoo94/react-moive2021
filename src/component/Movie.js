@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Movie = ({id, mainImg, title, genres, summary}) => {
   return (
     <li className="bg-white rounded-md shadow-2xl hover:bg-green-100" key={id} >
-      <Link to ={`/movie/${id}`}>
+      <Link to ={`/movie/${id}`} target={"_blank"} rel="noopener noreferrer">
       <img className="mx-auto rounded-lg mt-4" src={mainImg} alt={title}
       />
       <div >
